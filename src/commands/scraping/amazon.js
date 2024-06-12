@@ -31,7 +31,7 @@ module.exports = {
 			const userAgent = randomUseragent.getRandom();
 			const UA = userAgent;
 
-			await page.setUserAgent(UA);
+			// await page.setUserAgent(UA);
 
 			await page.goto(url);
 
@@ -66,7 +66,11 @@ module.exports = {
 			// 		console.log("HTML content saved to page.html");
 			// 	}
 			// });
-			await page.waitForSelector(".a-price .a-offscreen", { timeout: 5000 });
+			// await page.waitForSelector(".a-price .a-offscreen", { timeout: 5000 });
+
+			// const p = await page.$(".a-price .a-offscreen");
+
+			// console.log(p);
 
 			const productDetails = await page.evaluate(() => {
 				let title = document.querySelector("#productTitle")?.innerText.trim();
