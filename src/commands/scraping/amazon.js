@@ -47,9 +47,9 @@ module.exports = {
 			// } catch (error) {
 			// 	console.log("Cookie consent pop-up not found or already accepted.");
 			// }
-			await page.screenshot({
-				path: "demo.png",
-			});
+			// await page.screenshot({
+			// 	path: "demo.png",
+			// });
 			// const fs = require("fs");
 			// const path = require("path");
 
@@ -80,13 +80,11 @@ module.exports = {
 				let price = document
 					.querySelector(".a-price .a-offscreen")
 					?.innerText.trim();
-				let aokprprice, wholeprice;
-				// if (!price)
-				// 	price = document.querySelector(".aok-offscreen")?.innerText.trim();
-				// if (!price)
-				aokprprice = document.querySelector(".aok-offscreen")?.innerText.trim();
-				// if (!price)
-				wholeprice = document.querySelector(".a-price-whole")?.innerText.trim();
+
+				if (!price)
+					price = document.querySelector(".a-price-whole")?.innerText.trim();
+				if (!price)
+					price = document.querySelector(".aok-offscreen")?.innerText.trim();
 
 				const rating = document.querySelector(".a-icon-alt")?.innerText.trim();
 
@@ -98,8 +96,6 @@ module.exports = {
 					title,
 					price,
 					rating,
-					aokprprice,
-					wholeprice,
 					image,
 					// spanPrice,
 				};
