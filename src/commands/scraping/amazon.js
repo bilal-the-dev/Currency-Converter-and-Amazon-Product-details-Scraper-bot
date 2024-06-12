@@ -34,9 +34,9 @@ module.exports = {
       await page.setUserAgent(UA);
 
       await page.goto(url);
-      // await page.screenshot({
-      //   path: "demo.png",
-      // });
+      await page.screenshot({
+        path: "demo.png",
+      });
 
       const productDetails = await page.evaluate(() => {
         let title = document.querySelector("#productTitle")?.innerText.trim();
