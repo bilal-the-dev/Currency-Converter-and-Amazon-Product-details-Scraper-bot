@@ -35,18 +35,18 @@ module.exports = {
 
 			await page.goto(url);
 
-			try {
-				// Wait for the accept button to appear
-				await page.waitForSelector("#sp-cc-accept", { timeout: 2000 });
+			// try {
+			// 	// Wait for the accept button to appear
+			// 	await page.waitForSelector("#sp-cc-accept", { timeout: 2000 });
 
-				// Click the accept button
-				await page.click("#sp-cc-accept");
+			// 	// Click the accept button
+			// 	await page.click("#sp-cc-accept");
 
-				// Wait for the page to fully load after accepting cookies
-				await page.waitForNavigation({ waitUntil: "networkidle2" });
-			} catch (error) {
-				console.log("Cookie consent pop-up not found or already accepted.");
-			}
+			// 	// Wait for the page to fully load after accepting cookies
+			// 	await page.waitForNavigation({ waitUntil: "networkidle2" });
+			// } catch (error) {
+			// 	console.log("Cookie consent pop-up not found or already accepted.");
+			// }
 			await page.screenshot({
 				path: "demo.png",
 			});
@@ -79,9 +79,9 @@ module.exports = {
 				// if (!price)
 				// 	price = document.querySelector(".aok-offscreen")?.innerText.trim();
 				// if (!price)
-				const spanPrice = document
-					.querySelector("span.a-price span.a-offscreen")
-					?.innerText.trim();
+				// const spanPrice = document
+				// 	.querySelector("span.a-price span.a-offscreen")
+				// 	?.innerText.trim();
 
 				const rating = document.querySelector(".a-icon-alt")?.innerText.trim();
 
@@ -94,7 +94,7 @@ module.exports = {
 					price,
 					rating,
 					image,
-					spanPrice,
+					// spanPrice,
 				};
 			});
 			console.log(productDetails);
