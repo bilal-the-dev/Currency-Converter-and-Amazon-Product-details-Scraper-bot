@@ -1,9 +1,4 @@
-const {
-	ApplicationCommandOptionType,
-	PermissionFlagsBits,
-	EmbedBuilder,
-	time,
-} = require("discord.js");
+const { ApplicationCommandOptionType, EmbedBuilder } = require("discord.js");
 const convertCurrency = require("../../utils/currencyConvertor");
 
 module.exports = {

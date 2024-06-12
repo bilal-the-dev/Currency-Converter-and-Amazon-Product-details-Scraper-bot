@@ -1,8 +1,4 @@
-const {
-	ApplicationCommandOptionType,
-	PermissionFlagsBits,
-	EmbedBuilder,
-} = require("discord.js");
+const { ApplicationCommandOptionType, EmbedBuilder } = require("discord.js");
 const data = require("../../../config.json");
 module.exports = {
 	name: "reminder",

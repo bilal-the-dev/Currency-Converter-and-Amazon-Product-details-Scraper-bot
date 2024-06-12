@@ -1,9 +1,5 @@
-const {
-	ApplicationCommandOptionType,
-	PermissionFlagsBits,
-	EmbedBuilder,
-} = require("discord.js");
-const randomUseragent = require("random-useragent");
+const { ApplicationCommandOptionType, EmbedBuilder } = require("discord.js");
+// const randomUseragent = require("random-useragent");
 
 module.exports = {
 	name: "amazon",
@@ -28,8 +24,8 @@ module.exports = {
 
 			await page.setViewport({ width: 1280, height: 720 });
 
-			const userAgent = randomUseragent.getRandom();
-			const UA = userAgent;
+			// const userAgent = randomUseragent.getRandom();
+			// const UA = userAgent;
 
 			// await page.setUserAgent(UA);
 
