@@ -59,9 +59,16 @@ module.exports = {
 
 				if (!title) title = document.querySelector("#title")?.innerText.trim();
 
-				const price = document
+				let price = document
 					.querySelector(".a-price .a-offscreen")
 					?.innerText.trim();
+
+				if (!price)
+					price = document.querySelector(".aok-offscreen")?.innerText.trim();
+				if (!price)
+					price = document
+						.querySelector("span.a-price span.a-offscreen")
+						?.innerText.trim();
 
 				const rating = document.querySelector(".a-icon-alt")?.innerText.trim();
 
