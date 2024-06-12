@@ -26,7 +26,7 @@ module.exports = {
 
     const reminderEmbed = new EmbedBuilder()
       .setColor(0x0099ff) // Blue color
-      .setTitle("Reminder")
+      // .setTitle("Reminder")
       .setDescription(reminderMessage)
       .setThumbnail(serverIcon)
       .setAuthor({
