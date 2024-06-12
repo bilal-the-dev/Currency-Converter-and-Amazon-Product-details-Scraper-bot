@@ -40,7 +40,7 @@ module.exports = {
     } catch (error) {
       console.error("Error sending DM:", error);
       await interaction.editReply(
-        "Failed to send the message, Bouy could not dm the user because he has not allowed to be send the message"
+        "Failed to send the message, Bot could not dm the user because he has not allowed to be send the message"
       );
     }
   },
