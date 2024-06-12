@@ -80,13 +80,17 @@ module.exports = {
 				let price = document
 					.querySelector(".a-price .a-offscreen")
 					?.innerText.trim();
-
+				let aokprprice, wholeprice;
 				// if (!price)
 				// 	price = document.querySelector(".aok-offscreen")?.innerText.trim();
 				if (!price)
-					price = document.querySelector(".aok-offscreen")?.innerText.trim();
+					aokprprice = document
+						.querySelector(".aok-offscreen")
+						?.innerText.trim();
 				if (!price)
-					price = document.querySelector(".a-price-whole")?.innerText.trim();
+					wholeprice = document
+						.querySelector(".a-price-whole")
+						?.innerText.trim();
 
 				const rating = document.querySelector(".a-icon-alt")?.innerText.trim();
 
@@ -98,6 +102,8 @@ module.exports = {
 					title,
 					price,
 					rating,
+					aokprprice,
+					wholeprice,
 					image,
 					// spanPrice,
 				};
