@@ -83,14 +83,10 @@ module.exports = {
 				let aokprprice, wholeprice;
 				// if (!price)
 				// 	price = document.querySelector(".aok-offscreen")?.innerText.trim();
-				if (!price)
-					aokprprice = document
-						.querySelector(".aok-offscreen")
-						?.innerText.trim();
-				if (!price)
-					wholeprice = document
-						.querySelector(".a-price-whole")
-						?.innerText.trim();
+				// if (!price)
+				aokprprice = document.querySelector(".aok-offscreen")?.innerText.trim();
+				// if (!price)
+				wholeprice = document.querySelector(".a-price-whole")?.innerText.trim();
 
 				const rating = document.querySelector(".a-icon-alt")?.innerText.trim();
 
