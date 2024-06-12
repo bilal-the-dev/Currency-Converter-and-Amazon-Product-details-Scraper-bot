@@ -77,11 +77,11 @@ module.exports = {
 
       const embed = new EmbedBuilder()
         .setColor("#0099ff")
-        .setTitle(productDetails.title)
+        .setTitle(productDetails.title ?? 'Data found')
         .setDescription(
           `**Original Price**: ${productDetails.price}\n**Discounted Price**: ${discountedPrice}\n**Rating**: ${productDetails.rating}`
         )
-        .setThumbnail(productDetails.image)
+        .setThumbnail(productDetails.image ?? '')
         .setTimestamp();
 
       await interaction.editReply({ embeds: [embed] });
