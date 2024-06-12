@@ -26,7 +26,7 @@ module.exports = {
         return await interaction.editReply("Only Amazon links are allowed");
       page = await client.browser.newPage();
 
-      // await page.setViewport({ width: 1280, height: 720 });
+      await page.setViewport({ width: 1280, height: 720 });
 
       const userAgent = randomUseragent.getRandom();
       const UA = userAgent;
