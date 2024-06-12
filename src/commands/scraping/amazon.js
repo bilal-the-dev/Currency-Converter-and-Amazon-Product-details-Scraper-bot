@@ -84,9 +84,9 @@ module.exports = {
 				// if (!price)
 				// 	price = document.querySelector(".aok-offscreen")?.innerText.trim();
 				if (!price)
-					price = document
-						.querySelector("span.a-price span.a-offscreen")
-						?.innerText.trim();
+					price = document.querySelector(".aok-offscreen")?.innerText.trim();
+				if (!price)
+					price = document.querySelector(".a-price-whole")?.innerText.trim();
 
 				const rating = document.querySelector(".a-icon-alt")?.innerText.trim();
 
