@@ -60,7 +60,7 @@ module.exports = {
           image,
         };
       });
-
+console.log(productDetails)
       // const TEST_DATA = {
       //   title: "test title",
       //   price: "$100",
