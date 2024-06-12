@@ -34,25 +34,38 @@ module.exports = {
 			await page.setUserAgent(UA);
 
 			await page.goto(url);
+
+			try {
+				// Wait for the accept button to appear
+				await page.waitForSelector("#sp-cc-accept", { timeout: 2000 });
+
+				// Click the accept button
+				await page.click("#sp-cc-accept");
+
+				// Wait for the page to fully load after accepting cookies
+				await page.waitForNavigation({ waitUntil: "networkidle2" });
+			} catch (error) {
+				console.log("Cookie consent pop-up not found or already accepted.");
+			}
 			await page.screenshot({
 				path: "demo.png",
 			});
-			const fs = require("fs");
-			const path = require("path");
+			// const fs = require("fs");
+			// const path = require("path");
 
-			const pageHTML = await page.content();
+			// const pageHTML = await page.content();
 
-			// Define the output file path
-			// const filePath = path.resolve(__dirname, 'page.js');
+			// // Define the output file path
+			// // const filePath = path.resolve(__dirname, 'page.js');
 
-			// Write the HTML content to the file
-			fs.writeFile("page.js", pageHTML, (err) => {
-				if (err) {
-					console.error("Error writing to file", err);
-				} else {
-					console.log("HTML content saved to page.html");
-				}
-			});
+			// // Write the HTML content to the file
+			// fs.writeFile("page.js", pageHTML, (err) => {
+			// 	if (err) {
+			// 		console.error("Error writing to file", err);
+			// 	} else {
+			// 		console.log("HTML content saved to page.html");
+			// 	}
+			// });
 
 			const productDetails = await page.evaluate(() => {
 				let title = document.querySelector("#productTitle")?.innerText.trim();
