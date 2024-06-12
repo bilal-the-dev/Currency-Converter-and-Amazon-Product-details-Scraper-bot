@@ -66,6 +66,7 @@ module.exports = {
 			// 		console.log("HTML content saved to page.html");
 			// 	}
 			// });
+			await page.waitForSelector(".a-price .a-offscreen", { timeout: 5000 });
 
 			const productDetails = await page.evaluate(() => {
 				let title = document.querySelector("#productTitle")?.innerText.trim();
@@ -78,10 +79,10 @@ module.exports = {
 
 				// if (!price)
 				// 	price = document.querySelector(".aok-offscreen")?.innerText.trim();
-				// if (!price)
-				// const spanPrice = document
-				// 	.querySelector("span.a-price span.a-offscreen")
-				// 	?.innerText.trim();
+				if (!price)
+					price = document
+						.querySelector("span.a-price span.a-offscreen")
+						?.innerText.trim();
 
 				const rating = document.querySelector(".a-icon-alt")?.innerText.trim();
 
