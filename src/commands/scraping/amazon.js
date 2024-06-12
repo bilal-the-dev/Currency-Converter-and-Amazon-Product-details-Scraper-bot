@@ -104,7 +104,11 @@ module.exports = {
 				.setTitle(productDetails.title ?? "Data found")
 				.setURL(url)
 				.setDescription(
-					`**Original Price**: ${productDetails.price}\n**Discounted Price**: ${discountedPrice}\n**Rating**: ${productDetails.rating}`
+					`**Original Price**: ${
+						productDetails.price
+					}\n**Discounted Price**: ${discountedPrice}\n**Rating**: ${
+						productDetails.rating ?? "Not found"
+					}`
 				)
 				.setTimestamp();
 
@@ -125,9 +129,9 @@ function isAmazonLink(url) {
 }
 
 function applyDiscount(priceString) {
-	const priceWithoutDollar = priceString.replace("$", "");
-	const price = parseFloat(priceWithoutDollar);
+	const priceWithoutSymbols = priceString.replace(/[$€£]/g, "");
+	const price = parseFloat(priceWithoutSymbols);
 	const discountedPrice = price * 0.25;
-	const formattedPrice = `$${discountedPrice.toFixed(2)}`;
+	const formattedPrice = `${discountedPrice.toFixed(2)}`;
 	return formattedPrice;
 }
