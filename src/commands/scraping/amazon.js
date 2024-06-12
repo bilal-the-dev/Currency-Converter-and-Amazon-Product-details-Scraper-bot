@@ -102,6 +102,7 @@ module.exports = {
 			const embed = new EmbedBuilder()
 				.setColor("#0099ff")
 				.setTitle(productDetails.title ?? "Data found")
+				.setURL(url)
 				.setDescription(
 					`**Original Price**: ${productDetails.price}\n**Discounted Price**: ${discountedPrice}\n**Rating**: ${productDetails.rating}`
 				)
