@@ -42,39 +42,44 @@ module.exports = {
     },
   ],
   callback: async (client, interaction) => {
-    await interaction.deferReply();
-    let fromCurrency = interaction.options.get("from-currency")?.value || "USD";
-    let toCurrency = interaction.options.get("to-currency")?.value || "GBP";
-    const amount = interaction.options.get("amount").value;
+    try {
+      await interaction.deferReply();
+      let fromCurrency =
+        interaction.options.get("from-currency")?.value || "USD";
+      let toCurrency = interaction.options.get("to-currency")?.value || "GBP";
+      const amount = interaction.options.get("amount").value;
 
-    const conversion = await convertCurrency(
-      amount,
-      fromCurrency.toUpperCase(),
-      toCurrency.toUpperCase(),
-      interaction
-    );
-    if (!conversion) {
-      return await interaction.editReply(
-        `Unable to convert from ${fromCurrency} to ${toCurrency}, the entered currency is not correct please make sure to visit https://www.foreignexchangelive.com/currency-codes-symbols/ and  see the corresponding currency code`
+      const conversion = await convertCurrency(
+        amount,
+        fromCurrency.toUpperCase(),
+        toCurrency.toUpperCase(),
+        interaction
       );
+      if (!conversion) {
+        return await interaction.editReply(
+          `Unable to convert from ${fromCurrency} to ${toCurrency}, the entered currency is not correct please make sure to visit https://www.foreignexchangelive.com/currency-codes-symbols/ and  see the corresponding currency code`
+        );
+      }
+      const embed = new EmbedBuilder()
+        .setColor(0x0099ff) // Blue color
+        .setTitle("Currency Conversion")
+        .setDescription(conversion.message)
+        .addFields(
+          {
+            name: "Amount",
+            value: `${conversion.amount} ${conversion.fromCurrency}`,
+            inline: true,
+          },
+          {
+            name: "Converted Amount",
+            value: `${conversion.convertedAmount} ${conversion.toCurrency}`,
+            inline: true,
+          }
+        );
+
+      await interaction.editReply({ embeds: [embed] });
+    } catch (error) {
+      console.log(error);
     }
-    const embed = new EmbedBuilder()
-      .setColor(0x0099ff) // Blue color
-      .setTitle("Currency Conversion")
-      .setDescription(conversion.message)
-      .addFields(
-        {
-          name: "Amount",
-          value: `${conversion.amount} ${conversion.fromCurrency}`,
-          inline: true,
-        },
-        {
-          name: "Converted Amount",
-          value: `${conversion.convertedAmount} ${conversion.toCurrency}`,
-          inline: true,
-        }
-      );
-
-    await interaction.editReply({ embeds: [embed] });
   },
 };

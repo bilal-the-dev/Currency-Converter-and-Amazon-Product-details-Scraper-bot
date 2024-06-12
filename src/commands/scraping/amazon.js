@@ -70,7 +70,7 @@ module.exports = {
 
       if (!productDetails["price"])
         return await interaction.editReply(
-          "Price Could not be found in the Response"
+          "Something went wrong with fetching the product details, please try again."
         );
 
       const discountedPrice = applyDiscount(productDetails["price"]);
