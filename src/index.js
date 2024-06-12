@@ -16,7 +16,7 @@ eventHandler(client);
 
 puppeteer
   .launch({
-    headless: false,
+    // headless: false,
     args: ["--no-sandbox"],
   })
   .then((browser) => (client.browser = browser));
