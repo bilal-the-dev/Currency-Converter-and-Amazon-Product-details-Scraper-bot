@@ -71,6 +71,7 @@ To configure the bot, set the following environment variables:
 TOKEN ='TOKEN HERE'
 CLIENT_ID = 'BOT ID'
 GUILD_ID = 'SERVER ID'
+STAFF_ROLE_ID = 'ROLE_ID'
 ```
 
 ## Example Usage
