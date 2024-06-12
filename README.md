@@ -85,10 +85,10 @@ GUILD_ID = 'SERVER ID'
    - Command: `/price https://www.amazon.com/dp/B08N5WRWNW`
    - Bot Response:
      ```
-     **Product Title**: Example Product
-     **Original Price**: $50.00
-     **Discounted Price**: $45.00
-     **Rating**: 4.5/5
+     Product Title: Example Product
+     Original Price: $50.00
+     Discounted Price: $45.00
+     Rating: 4.5/5
      ```
 
 3. **Reminder System**:
@@ -106,3 +106,4 @@ For more information and updates, follow my posts on:
 ## Installation
 
 To get started with the bot, follow the general guide on how to run my Discord bots [here](https://github.com/bilal-the-dev/How-to-run-my-discord-bots). If you encounter any issues, please open an issue on GitHub.
+The start command in this case is `node src/index.js`.
