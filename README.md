@@ -5,7 +5,7 @@ A versatile Discord bot offering multiple functionalities, including currency co
 ## Features
 
 - **Currency Converter**: Convert amounts between various currencies using the `/convert` command.
-- **Amazon Price Checker**: Check the price of Amazon products using the `/price` command.
+- **Amazon Price Checker**: Check the price of Amazon products using the `/amazon` command.
 - **Reminder System**: Send reminders to users with custom messages using the `/reminder` command.
 
 ## Commands
@@ -28,12 +28,12 @@ Use the `/convert` command to convert amounts between different currencies.
 
 ### Amazon Price Checker
 
-Use the `/price` command to check the price of a product on Amazon.
+Use the `/amazon` command to check the price of a product on Amazon.
 
 **Command Structure**:
 
 ```
-/price [link]
+/amazon [link]
 ```
 
 **Parameters**:
@@ -82,7 +82,7 @@ GUILD_ID = 'SERVER ID'
 
 2. **Amazon Price Checker**:
 
-   - Command: `/price https://www.amazon.com/dp/B08N5WRWNW`
+   - Command: `/amazon https://www.amazon.com/dp/B08N5WRWNW`
    - Bot Response:
      ```
      Product Title: Example Product

@@ -3,10 +3,10 @@ const {
   PermissionFlagsBits,
   EmbedBuilder,
 } = require("discord.js");
-const data = require("../../../config.json");
 const randomUseragent = require("random-useragent");
+
 module.exports = {
-  name: "price",
+  name: "amazon",
   description: "checks from the amazon price product",
   options: [
     {
@@ -34,9 +34,9 @@ module.exports = {
       await page.setUserAgent(UA);
 
       await page.goto(url);
-      await page.screenshot({
-        path: "demo.png",
-      });
+      // await page.screenshot({
+      //   path: "demo.png",
+      // });
 
       const productDetails = await page.evaluate(() => {
         let title = document.querySelector("#productTitle")?.innerText.trim();
@@ -61,12 +61,12 @@ module.exports = {
         };
       });
 
-      const TEST_DATA = {
-        title: "test title",
-        price: "$100",
-        rating: "5",
-        image: "ddd",
-      };
+      // const TEST_DATA = {
+      //   title: "test title",
+      //   price: "$100",
+      //   rating: "5",
+      //   image: "ddd",
+      // };
 
       if (!productDetails["price"])
         return await interaction.editReply(
