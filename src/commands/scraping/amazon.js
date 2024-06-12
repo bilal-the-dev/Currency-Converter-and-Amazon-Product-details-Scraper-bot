@@ -81,8 +81,10 @@ module.exports = {
         .setDescription(
           `**Original Price**: ${productDetails.price}\n**Discounted Price**: ${discountedPrice}\n**Rating**: ${productDetails.rating}`
         )
-        .setThumbnail(productDetails.image ?? '')
         .setTimestamp();
+
+      productDetails.image && embed.setThumbnail(productDetails.image)
+
 
       await interaction.editReply({ embeds: [embed] });
     } catch (error) {
