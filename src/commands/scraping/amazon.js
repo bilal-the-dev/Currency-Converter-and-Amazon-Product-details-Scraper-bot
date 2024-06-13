@@ -21,8 +21,8 @@ module.exports = {
 			await interaction.deferReply();
 			const url = interaction.options.get("link").value;
 
-			if (!isAmazonLink(url))
-				return await interaction.editReply("Only Amazon links are allowed");
+			// if (!isAmazonLink(url))
+			// 	return await interaction.editReply("Only Amazon links are allowed");
 			page = await client.browser.newPage();
 
 			await page.setViewport({ width: 1280, height: 720 });
