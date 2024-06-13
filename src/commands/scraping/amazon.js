@@ -13,6 +13,9 @@ module.exports = {
 		},
 	],
 	callback: async (client, interaction) => {
+		if (!interaction.guild)
+			return await interaction.reply("Command can ba ran inside server only.");
+
 		let page;
 		try {
 			await interaction.deferReply();
@@ -136,7 +139,7 @@ module.exports = {
 };
 
 function isAmazonLink(url) {
-	const amazonPattern = /^(https?:\/\/)?(www\.)?amazon\.[a-z\.]{2,6}\/.*$/i;
+	const amazonPattern = /^(https:\/\/(amzn|amazon))\.[a-z\.]{2,6}\/.*$/i;
 	return amazonPattern.test(url);
 }
 

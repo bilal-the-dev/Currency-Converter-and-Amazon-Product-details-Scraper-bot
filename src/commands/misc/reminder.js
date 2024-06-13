@@ -12,6 +12,9 @@ module.exports = {
 		},
 	],
 	callback: async (client, interaction) => {
+		if (!interaction.guild)
+			return await interaction.reply("Command can ba ran inside server only.");
+
 		await interaction.deferReply();
 		const user = interaction.options.getUser("target-user");
 		if (!user)

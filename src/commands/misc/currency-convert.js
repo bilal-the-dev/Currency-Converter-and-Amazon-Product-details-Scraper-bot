@@ -38,6 +38,11 @@ module.exports = {
 	],
 	callback: async (client, interaction) => {
 		try {
+			if (!interaction.guild)
+				return await interaction.reply(
+					"Command can ba ran inside server only."
+				);
+
 			await interaction.deferReply();
 			if (!interaction.member.roles.cache.has(process.env.STAFF_ROLE_ID))
 				return await interaction.editReply("Staff only.");
