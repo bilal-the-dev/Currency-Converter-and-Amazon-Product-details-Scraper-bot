@@ -139,7 +139,7 @@ module.exports = {
 };
 
 function isAmazonLink(url) {
-	const amazonPattern = /^(https:\/\/(amzn|amazon))\.[a-z\.]{2,6}\/.*$/i;
+	const amazonPattern = /^https:\/\/www\.(amazon|amzn)\.[a-z\.]{2,6}\/.*$/i;
 	return amazonPattern.test(url);
 }
 
